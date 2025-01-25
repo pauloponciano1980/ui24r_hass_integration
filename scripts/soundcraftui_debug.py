@@ -11,48 +11,53 @@ from soundcraftui import UiConnection, UiAuxFader, UiInputFader, UiInputAuxFader
 #### 
 
 async def test_fader(ui_fader):
-   
-
-    await asyncio.sleep(1) 
     ui_fader_mute = ui_fader.mute
     ui_fader_volume = ui_fader.volume
+    
     logging.info(f"valores Originais: {ui_fader}")
     
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_mute(True)")
+    ui_fader.set_mute(True)
     
-    #logging.info(f"ui_fader.set_mute(True)")
-    #ui_fader.set_mute(True)
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(1)")
+    ui_fader.set_volume(1.0)
     
-    #await asyncio.sleep(1)
-    #logging.info(f"ui_fader.set_volume(1)")
-    #ui_fader.set_volume(1.0)
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(0.8)")
+    ui_fader.set_volume(0.8)
     
-    #await asyncio.sleep(1)
-    #logging.info(f"ui_fader.set_volume(0.6)")
-    #ui_fader.set_volume(0.6)
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(0.6)")
+    ui_fader.set_volume(0.6)
     
-    #await asyncio.sleep(1)
-    #logging.info(f"ui_fader.set_volume(0.3)")
-    #ui_fader.set_volume(0.3)
-    #await asyncio.sleep(1)
-
-    #logging.info(f"ui_fader.set_volume(0)")
-    #ui_fader.set_volume(0)
-    #await asyncio.sleep(1)
-
-    #logging.info(f"ui_fader.set_mute(False)")
-    #ui_fader.set_mute(False)
-    #await asyncio.sleep(1)
-
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(0.4)")
+    ui_fader.set_volume(0.4)
+    
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(0.2)")
+    ui_fader.set_volume(0.2)
+    
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_volume(0)")
+    ui_fader.set_volume(0)
+    
+    await asyncio.sleep(1)
+    logging.info(f"ui_fader.set_mute(False)")
+    ui_fader.set_mute(False)
+    
+    await asyncio.sleep(1)
     logging.info(f"ui_fader.toggle_mute()")
     ui_fader.toggle_mute()
-    await asyncio.sleep(5)
-
+    
+    await asyncio.sleep(1)
     logging.info(f"ui_fader.toggle_mute()")
-    ui_fader.toggle_mute()
-    await asyncio.sleep(5)
-
-    #ui_fader.set_volume(ui_fader_volume)
-    #ui_fader.set_mute(ui_fader_mute)
+    
+    await asyncio.sleep(1)
+    ui_fader.set_volume(ui_fader_volume)
+    ui_fader.set_mute(ui_fader_mute)
     
 async def main():
     MIXER_IP = "192.168.15.103"

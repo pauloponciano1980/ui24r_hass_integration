@@ -1,0 +1,7 @@
+{
+	"domain": "soundcraftui",
+	"name": "Soundcraft UI Series",
+	"requirements": ["crccheck==1.1"],
+	"iot_class": "assumed_state",
+	"version": "0.1.0"
+}

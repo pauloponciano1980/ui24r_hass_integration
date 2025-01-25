@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "homeassistant.exposed_entities",
+  "data": {
+    "assistants": {},
+    "exposed_entities": {
+      "zone.home": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "conversation.home_assistant": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "sun.sun": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "light.studio_godox_light": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.studio_godox_light_2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.1": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.adasd1": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.sdf2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.aux1": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.aux2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.aux45": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.aux95": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.b5c6d7e8f9g0h1ij2k3l": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.x3y4z5a6b7c8d9e0f1g2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.x3y4z_5a6b7_c8d9e_0f1g2": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.m4n5o_6p7q8_r9s0t_u1v2w": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.studio_godox_light_1": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.soundcraft_ui": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      }
+    }
+  }
+}
