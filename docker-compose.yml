@@ -8,37 +8,5 @@ services:
     ports:
       - 8123:8123/tcp
     restart: unless-stopped
-    #network_mode: mqtt5-network
-
-#  mosquitto:
-#    image: eclipse-mosquitto
-#    container_name: mosquitto
-#    ports:
-#      - "1883:1883"
-#      - "9001:9001"
-#    volumes:
-#      - ./mosquitto/config:/mosquitto/config:rw
-#      - ./mosquitto/data:/mosquitto/data:rw
-#      - ./mosquitto/log:/mosquitto/log:rw
-#    restart: unless-stopped
-#    network_mode: mqtt5-network
-#
-#  zigbee2mqtt:
-#    container_name: zigbee2mqtt
-#    image: koenkk/zigbee2mqtt
-#    restart: unless-stopped
-#    volumes:
-#      - ./zigbee2mqtt/data:/app/data
-#      - ./zigbee2mqtt/run/udev:/run/udev:ro
-#    ports:
-#      # Frontend port
-#      - 8080:8080
-#    environment:
-#      - TZ=Americas/Sao Paulo
-#    devices:
-#      # Make sure this matched your adapter location
-#      #-  /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00:/dev/ttyACM0
-#      - USB\VID_1A86&PID_55D4\20221201082043:/dev/ttyACM0
-#    network_mode: mqtt5-network
-#networks:
-#  mqtt5-network:
+   
+   
