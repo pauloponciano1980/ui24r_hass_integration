@@ -1,7 +1,15 @@
 {
 	"domain": "soundcraftui",
 	"name": "Soundcraft UI Series",
+	"dependencies": [],
+	"after_dependencies": [],
 	"requirements": ["crccheck==1.1"],
-	"iot_class": "assumed_state",
-	"version": "0.1.0"
+	"iot_class": "local_polling",
+	"version": "0.1.0",
+	"integration_type": "hub",
+	"loggers": ["soundcraftui"],
+	"issue_tracker": "https://github.com/pauloponciano1980/ui24r_hass_integration/issues",  
+	"codeowners": ["@dwmaker"],
+	"documentation": "https://github.com/pauloponciano1980/ui24r_hass_integration/blob/main/README.md",
+	"quality_scale": "silver"
 }

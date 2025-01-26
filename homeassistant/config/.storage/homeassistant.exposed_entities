@@ -25,6 +25,20 @@
             "should_expose": false
           }
         }
+      },
+      "light.soundcraft_ui": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
+      },
+      "light.overhead": {
+        "assistants": {
+          "conversation": {
+            "should_expose": true
+          }
+        }
       }
     }
   }

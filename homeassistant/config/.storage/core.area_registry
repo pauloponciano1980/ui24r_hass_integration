@@ -36,6 +36,17 @@
         "picture": null,
         "created_at": "2025-01-25T22:21:03.820478+00:00",
         "modified_at": "2025-01-25T22:21:03.820479+00:00"
+      },
+      {
+        "aliases": [],
+        "floor_id": "subsolo",
+        "icon": null,
+        "id": "estudio",
+        "labels": [],
+        "name": "Estúdio",
+        "picture": null,
+        "created_at": "2025-01-26T03:04:55.711141+00:00",
+        "modified_at": "2025-01-26T03:04:55.711145+00:00"
       }
     ]
   }
