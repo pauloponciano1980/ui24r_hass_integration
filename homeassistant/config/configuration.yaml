@@ -4,7 +4,6 @@ default_config:
 
 light:
   - platform: soundcraftui
-    #name: "Soundcraft UI"
     ip_address: "192.168.15.103"
 python_script:
 # Load frontend themes from the themes folder
