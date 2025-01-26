@@ -1,6 +1,3 @@
-**/__pycache__/ 
-homeassistant/config/home-assistant.log
-homeassistant/config/home-assistant.log.1
-homeassistant/config/home-assistant.log.fault
-homeassistant/config/home-assistant_v2.db-shm
-homeassistant/config/home-assistant_v2.db-wal
+**/__pycache__
+
+homeassistant/config/**
