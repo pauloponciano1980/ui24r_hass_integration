@@ -4,7 +4,7 @@
 
 import logging
 import websocket
-import asyncio
+import time
 import threading
 from dataclasses import dataclass, field
 
@@ -61,7 +61,7 @@ class UiConnection(threading.Thread):
         self.web_socket_app.keep_running = False;
         self._is_open=False
         
-    async def async_run_forever(self):
+    def async_run_forever(self):
         
         self._is_open = False
         self.web_socket_app = websocket.WebSocketApp(f"ws://{self._mixer_ip}:80", on_error = self.on_error, on_close = self.on_close, on_message=self.on_message,on_open=self.on_open)
@@ -71,7 +71,7 @@ class UiConnection(threading.Thread):
         self.wst.start()
         
         while not self._is_open:
-            await asyncio.sleep(0.1)
+            time.sleep(0.1)
         return
 
 @dataclass(frozen=True)
