@@ -1,0 +1,10 @@
+# services.yaml
+hello_world:
+  name: Hello World
+  description: Greetings to new Users
+  fields:
+    name:
+      description: The new user name.
+      example: Paulo
+
+      

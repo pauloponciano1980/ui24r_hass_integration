@@ -1,12 +1,13 @@
 services:
   homeassistant:
+    build: ./homeassistant
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
-      - ./homeassistant/config:/config
       - ./custom_components:/config/custom_components
+      - ./python_scripts:/config/python_scripts
     ports:
       - 8123:8123/tcp
+      - 6454:6454/udp
     restart: unless-stopped
    
    
