@@ -1,0 +1,26 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+#light:
+#  - platform: soundcraftui
+#    ip_address: "192.168.15.103"
+media_player:
+  - platform: soundcraftui
+    ip_address: "192.168.15.103"
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+homeassistant:
+  name: Home
+  latitude: -23.638919215925576
+  longitude: -46.65660502360849
+  elevation: 430
+  unit_system: metric
+  currency: USD
+  country: US
+  time_zone: "America/Sao_Paulo"
+  external_url: "https://www.example.com"
+  
+  

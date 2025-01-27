@@ -1,10 +1,11 @@
 services:
   homeassistant:
-    build: ./homeassistant
+    build: .
     container_name: homeassistant
     volumes:
       - ./custom_components:/config/custom_components
-      - ./python_scripts:/config/python_scripts
+      - ./config/configuration.yaml:/config/configuration.yaml
+      - ./config/create_user.py:/config/create_user.py
     ports:
       - 8123:8123/tcp
       - 6454:6454/udp
