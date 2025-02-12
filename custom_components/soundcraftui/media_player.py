@@ -111,7 +111,6 @@ class SoundcraftuiLight(MediaPlayerEntity):
         return self._ui_fader.mute
         
     def mute_volume(self, mute) -> None:
-        
         self._ui_fader.set_mute(mute)
         
     def unmute_volume(self) -> None:
