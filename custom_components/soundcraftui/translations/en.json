@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Already Configured"
+        },
+        "error": {
+            "cannot_connect": "Cannot Connect to your device",
+            "invalid_auth": "Invalid Auth Error",
+            "unknown": "Unknown Error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Enter IP Address for your Soundcraft UI Series",
+                    "password": "Password",
+                    "username": "User Name"
+                }
+            }
+        }
+   }
+}

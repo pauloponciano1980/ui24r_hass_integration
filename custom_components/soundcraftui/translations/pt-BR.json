@@ -1,0 +1,30 @@
+{
+    "ui": {
+        "panel": {
+            "config": {
+                "tips": {
+                    "join": "Junte-se a nós"
+                }
+            }
+        }
+    },
+    "config": {
+        "abort": {
+            "already_configured": "Já foi configurado"
+        },
+        "error": {
+            "cannot_connect": "Não foi possivel se conectar ao seu dispositivo",
+            "invalid_auth": "Autenticação Inválida",
+            "unknown": "Erro desconhecido"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Digite o endereço IP da sua Soundcraft UI Series",
+                    "password": "Password",
+                    "username": "User Name"
+                }
+            }
+        }
+   }
+}
