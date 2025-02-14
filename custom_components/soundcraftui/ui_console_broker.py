@@ -1,7 +1,7 @@
 
 from pynput.keyboard import Listener as KeyboardListener, Key
 
-from ui_broker import UiPaths, UiBroker
+from ui_websocket_broker import UiPaths, UiBroker
 import logging
 _LOGGER = logging.getLogger("soundcraftui")
 
@@ -57,3 +57,31 @@ class UiConsoleBroker(UiBroker):
     def start(self):
         self._keylistener.start()
 
+
+async def main():
+    from ui_desktop import UiDesktop
+    
+    websocketWrapper = UiConsoleBroker()
+
+    websocketWrapper.on_ui_command("SETS^i.0.name^brasil")
+
+    websocketWrapper.inputs[0].mix_subject.add_listener(lambda value: _LOGGER.info(f"inputs[0].volume = {value}"))
+    websocketWrapper.on_ui_command("SETD^i.0.mix^0.6")
+    websocketWrapper.on_ui_command("SETD^i.1.stereoIndex^2")
+    websocketWrapper.on_ui_command("SETD^i.2.stereoIndex^1")
+    websocketWrapper.inputs[0].mix_subject.submit(0.06)
+
+    app = UiDesktop(websocketWrapper)
+    
+    websocketWrapper.start()
+    t2 = app.async_run_forever()
+    
+    await t2
+    
+
+
+
+if __name__ == "__main__":
+    import asyncio
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+    asyncio.run(main())

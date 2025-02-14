@@ -2,12 +2,13 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
-#light:
+soundcraftui:
+#switch:
 #  - platform: soundcraftui
 #    ip_address: "192.168.15.103"
-media_player:
-  - platform: soundcraftui
-    ip_address: "192.168.15.103"
+#media_player:
+#  - platform: soundcraftui
+#    ip_address: "192.168.15.103"
 # Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
