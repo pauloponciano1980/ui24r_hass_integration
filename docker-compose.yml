@@ -1,7 +1,9 @@
 services:
   homeassistant:
-    build: .
     container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    #environment:
+    #  - DISABLE_JEMALLOC=true
     volumes:
       - ./custom_components:/config/custom_components
       - ./config/configuration.yaml:/config/configuration.yaml
@@ -9,6 +11,7 @@ services:
     ports:
       - 8123:8123/tcp
       - 6454:6454/udp
-    restart: unless-stopped
-   
+    #restart: unless-stopped
+    #privileged: true
+    #network_mode: host
    

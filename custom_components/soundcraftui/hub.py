@@ -10,25 +10,45 @@ import asyncio
 import random
 
 from homeassistant.core import HomeAssistant
+from . import ui_websocket_broker
+        
+from threading import Thread
 
+MIXER_PORT = "80"
 
 class Hub:
     """Dummy hub for Hello World example."""
 
-    manufacturer = "Demonstration Corp"
+    manufacturer = "Soundcraft"
 
     def __init__(self, hass: HomeAssistant, host: str) -> None:
         """Init dummy hub."""
+        
+        self._conn = ui_websocket_broker.SoundcraftuiInstance(url=f"ws://{host}:{MIXER_PORT}")
+
         self._host = host
         self._hass = hass
         self._name = host
         self._id = host.lower()
-        self.rollers = [
-            Roller(f"{self._id}_1", f"{self._name} 1", self),
-            Roller(f"{self._id}_2", f"{self._name} 2", self),
-            Roller(f"{self._id}_3", f"{self._name} 3", self),
-        ]
-        self.online = True
+        self.wst = Thread(target=self.conn.run_forever)
+        self.wst.daemon = True
+    
+    @property 
+    def conn(self)-> ui_websocket_broker.SoundcraftuiInstance :
+        return self._conn
+
+    @property    
+    def online(self):
+        return True
+
+    @property
+    def rollers(self):
+        list=[]
+        for id_input, input in enumerate(self.conn.inputs):
+            roler = Roller(rollerid = f"{self._id}.i.{id_input}", name = f"{self._name}.i.{id_input+1}", hub=self, id_input=id_input)
+            list.append(roler)
+        return list
+        
 
     @property
     def hub_id(self) -> str:
@@ -36,15 +56,21 @@ class Hub:
         return self._id
 
     async def test_connection(self) -> bool:
-        """Test connectivity to the Dummy hub is OK."""
-        await asyncio.sleep(1)
-        return True
-
+        
+        self.wst.start()
+        for i in range(0, 10) :
+        
+            if self.conn.model_subject.cached is not None and self.conn.firmware_subject.cached is not None: 
+                
+                return True
+            await asyncio.sleep(1)
+        
+        return False
 
 class Roller:
     """Dummy roller (device for HA) for Hello World example."""
 
-    def __init__(self, rollerid: str, name: str, hub: Hub) -> None:
+    def __init__(self, rollerid: str, name: str, hub: Hub, id_input:int) -> None:
         """Init dummy roller."""
         self._id = rollerid
         self.hub = hub
@@ -58,8 +84,16 @@ class Roller:
         self.moving = 0
 
         # Some static information about this device
-        self.firmware_version = f"0.0.{random.randint(1, 9)}"
-        self.model = "Test Device"
+    
+        #self.firmware_version = f"0.0.{random.randint(1, 9)}"
+    
+    @property
+    def model(self)->str:
+        return self.hub.conn.model_subject.cached
+
+    @property 
+    def firmware_version(self) -> str:
+        return self.hub.conn.firmware_subject.cached
 
     @property
     def roller_id(self) -> str:

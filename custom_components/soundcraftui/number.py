@@ -6,7 +6,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
-from .ui_websocket_broker import UiFloatSubject
+from .ui_websocket_broker import UiPercentSubject
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ async def async_setup_entry(
 class SoundcraftUINumber(NumberEntity):
     """Representation of a Soundcraft UI number."""
 
-    def __init__(self, conn, subject: UiFloatSubject, name):
+    def __init__(self, conn, subject: UiPercentSubject, name):
         """Initialize the number."""
         self._conn = conn
         self._subject = subject

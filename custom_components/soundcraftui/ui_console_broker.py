@@ -1,7 +1,7 @@
 
 from pynput.keyboard import Listener as KeyboardListener, Key
 
-from ui_websocket_broker import UiPaths, UiBroker
+from ui_websocket_broker import UiBroker
 import logging
 _LOGGER = logging.getLogger("soundcraftui")
 
@@ -24,31 +24,31 @@ class UiConsoleBroker(UiBroker):
                 self._keylistener.stop()
 
             elif key.char == '1':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(0)+"1")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(0)+"1")
             elif key.char == 'q':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(0)+"0")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(0)+"0")
             elif key.char == 'a':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(0)+"0.80")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(0)+"0.80")
             elif key.char == 'z':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(0)+"0.20")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(0)+"0.20")
 
             elif key.char == '2':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(1)+"1")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(1)+"1")
             elif key.char == 'w':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(1)+"0")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(1)+"0")
             elif key.char == 's':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(1)+"0.80")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(1)+"0.80")
             elif key.char == 'x':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(1)+"0.20")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(1)+"0.20")
 
             elif key.char == '3':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(2)+"1")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(2)+"1")
             elif key.char == 'e':
-                self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(2)+"0")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_FORCEUNMUTE.format(2)+"0")
             elif key.char == 'd':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(2)+"0.80")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(2)+"0.80")
             elif key.char == 'c':
-                self.on_ui_command(UiPaths.SETD_I_0_MIX.format(2)+"0.20")
+                pass#self.on_ui_command(UiPaths.SETD_I_0_MIX.format(2)+"0.20")
         except AttributeError: return
 
     def join(self):

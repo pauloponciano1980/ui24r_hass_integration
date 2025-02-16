@@ -7,6 +7,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.const import Platform
 
 from . import hub
+from . import ui_websocket_broker
 
 # List of platforms to support. There should be a matching .py file for each,
 # eg <cover.py> and <sensor.py>
